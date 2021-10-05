@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<title>Form</title>
+<style>
+    button {
+        background-color: #1e3764; /* Green */
+        border: none;
+        color: rgb(212, 228, 120);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+
+</style>
+</head>
+
+<body style="background-color:   #17181c; color: white;">
+<h1>Use the form below to add an additional car.</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.as_p}}</p>
+    <input type="submit" value="save"/>
+
+
+</form>
+
+</body>
+
+
+
+</html>
