@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<title>List</title>
+<style>
+    a:link {
+        color: goldenrod;
+            }
+    a:visited {
+        color: silver;
+            }
+    a:hover {
+        color: hotpink;
+            }
+    a:active {
+        color: turquoise;
+            }   
+</style>
+</head>
+
+<body style="background-color:   #17181c; color: white;">
+<h1>Below is the list of the most expensive cars in the world.</h1>
+
+<ul>
+    {% for car in object_list%}
+    <li><a href="cars/{{car.id}}/">{{car.make}} - {{car.model}}</a></li>
+    <!--<li>{{car.make}} - {{car.model}}</li>-->
+
+    {% endfor %}
+</ul>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+<title>Color</title>
+<style>
+    a:link {
+        color: goldenrod;
+            }
+    a:visited {
+        color: silver;
+            }
+    a:hover {
+        color: hotpink;
+            }
+    a:active {
+        color: turquoise;
+            }   
+</style>
+</head>
+
+<body style="background-color:   #17181c; color: white;">
+<h1>Below is the list of the most expensive cars filtered by color.</h1>
+<p>{{message}}</p>
+<p>Only {{number_of_cars}} are {{color}}.</p>
+<ul>
+    {% for car in car_colors_list%}
+    <li><a href="../../{{car.id}}/">{{car.make}} - {{car.color}}</a></li>
+    <!--<li>{{car.make}} - {{car.model}}</li>-->
+
+    {% endfor %}
+</ul>
+
+</body>
+
+
+
+</html>

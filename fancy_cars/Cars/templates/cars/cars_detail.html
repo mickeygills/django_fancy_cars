@@ -1,22 +1,39 @@
-<!DOCTYPE html>
-<html lang='en'>
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Album example · Bootstrap v5.1</title>
 
-<head>
-<title>Detail</title>
-<style>
-    button {
-        background-color: #1e3764; /* Green */
-        border: none;
-        color: rgb(212, 228, 120);
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'cars/assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
+      }
+    </style>
 
-</style>
-</head>
+    
+  </head>
 
 <body style="background-color:   #17181c; color: white;">
 
@@ -25,6 +42,7 @@
 <h3>Nation of Origin: {{object.nation_of_orign}}</h3>
 <p>Price: ${{object.price}}M.</p>
 <p>Horsepower: {{object.horsepower}}</p>
+<p>Color: {{object.color}}</p>
 
 <p>{{object.description}}</p>
 <p><img src="{{object.image.url}}" width="600px"></p>
@@ -39,7 +57,9 @@
     <input type="submit" value="Update Car" />
 </form>
 -->
+<script src="{% static 'cars/assets/dist/js/bootstrap.bundle.min.js' %}"></script>
 
+      
 </body>
 
 

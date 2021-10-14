@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from Cars.views import CarsListView, CarsDetailView, CarsCreateView, CarsUpdateView, CarsDeleteView
+from Cars.views import CarsListView, CarsDetailView, CarsCreateView, CarsUpdateView, CarsDeleteView, CarsByColor, CarsByYear, CarsByMake, CarsByNation
 
 
 urlpatterns = [
@@ -15,6 +15,10 @@ urlpatterns = [
     path('create/', CarsCreateView.as_view(), name='CreateCars'),
     path('update/<int:pk>/', CarsUpdateView.as_view(), name='UpdateCars'),
     path('delete/<int:pk>/', CarsDeleteView.as_view(), name='DeleteCars'),
+    path('cars/color/<color>/', CarsByColor.as_view(), name='CarsByColor'),
+    path('cars/year/<year>/', CarsByYear.as_view(), name='CarsByYear'),
+    path('cars/make/<make>/', CarsByMake.as_view(), name='CarsByMake'),
+    path('cars/nation/<nation>/', CarsByNation.as_view(), name='CarsByNation'),
 ]
 
 from django.conf import settings

@@ -125,4 +125,4 @@ class Cars(models.Model):
         return "{} - {}".format(self.make, self.model)
 
     def get_absolute_url(self):
-        return reverse("CarsDetail)", kwargs=("pk", self.pk))
+        return reverse("CarsDetail", kwargs={"pk": self.pk})
