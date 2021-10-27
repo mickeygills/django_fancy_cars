@@ -1,0 +1,7 @@
+{{object.name}}
+{{object.address}}
+{% for i in object.review_set.all %}
+
+{{i.review}}
+
+{% endfor %}

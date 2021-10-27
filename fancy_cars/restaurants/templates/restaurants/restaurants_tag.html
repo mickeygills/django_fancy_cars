@@ -1,0 +1,19 @@
+
+{% if filter_restaurants %}
+<p>Hello</p>
+
+{% for restaurant in filter_restaurants %}
+
+<p>
+    {{restaurant.name}}
+</p>
+
+
+{% endfor %}
+
+{% else %}
+<p>No Restaurants have this tag.</p>
+
+
+{% endif %}
+<h1>{{message}}</h1>

@@ -30,7 +30,10 @@
 
     {% endfor %}
 </ul>
-
+<p>You can eat at:</p>
+{% for i in all_restaurants %}
+<p>{{i.name}}</p>
+{% endfor %}
 </body>
 
 

@@ -1,0 +1,24 @@
+
+<h1>Hello</h1>
+<p>Restaurant: {{one_restaurant.name}}</p>
+<p>City: {{one_restaurant.city}}</p>
+<p></p>
+<h3>Reviews</h3>
+{% for i in one_restaurant.review_set.all %}
+
+<p>{{i.review}}</p>
+
+{% endfor %}
+
+<h3>Tags:</h3>
+{% if one_restaurant.tag.all %}
+
+{% for tag in one_restaurant.tag.all %}
+
+<p>{{tag.tag_review}}</p>
+
+{% endfor %}
+
+{% else %} 
+<h3>This restaurant has no tags.</h3>
+{% endif %}

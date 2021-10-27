@@ -1,0 +1,12 @@
+
+{% for rest in filter_restaurants %}
+
+<h3>Name: {{rest.name}}</h3>
+<p>Address: {{rest.address}}, {{rest.city}}, {{rest.state}}, {{rest.zip_code}}</p>
+<p>Rating: {{rest.rating}}</p>
+<p>Price: {{rest.price}}</p>
+<p>----------------------</p>
+
+{% endfor %}
+
+<h1>{{message}}</h1>

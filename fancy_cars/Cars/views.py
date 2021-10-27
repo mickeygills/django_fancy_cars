@@ -3,6 +3,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from .serializers import CarsListSerializer, CarsDetailSerializer
 from .models import Cars
+from restaurants.models import Restaurant
 
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -113,13 +114,15 @@ class CarsByYear(ListView):
     def get_context_data(self, **kwargs):
         context = super(CarsByYear, self).get_context_data(**kwargs)
         filtered_year = self.kwargs['year']
-        
+        all_restaurants = Restaurant.objects.all()
+        print(all_restaurants)
         cars_year = Cars.objects.filter(year=filtered_year)
         number_of_cars = len(cars_year)
         
         context['car_years_list'] = cars_year
         context['number_of_cars'] = number_of_cars
         context['year'] = filtered_year
+        context['all_restaurants'] = all_restaurants
         return context
 
 
