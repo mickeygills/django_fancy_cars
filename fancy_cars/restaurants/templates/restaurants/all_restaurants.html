@@ -1,3 +1,5 @@
+{% load static %}
+<!doctype html>
 <html>
   <head>
     <link
@@ -47,6 +49,19 @@
       {% endfor %}
 
       <h1>{{message}}</h1>
+      <p>Hello Again</p>
+      <div id="like_button_container">
+
+      </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="{% static 'restaurants/like_button.js' %}"></script>  
+    <!-- Load our React component. -->
+    
   </body>
+
+
+  
 </html>

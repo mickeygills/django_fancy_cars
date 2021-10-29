@@ -14,6 +14,10 @@ urlpatterns = [
     path('review/tag/<banana>/', views.FilterByTag.as_view(), name='tag_view'),
     path('createrestaurant/', views.RestaurantFormView.as_view(), name='form_restaurant'),
     path('contactus/', views.EmailFormView.as_view(), name='form_email'),
+    path('api/1/listrestaurants/', views.RestaurantListAPIView.as_view(), name='listres_API'),
+    #path('api/1/listrestaurants/<int:id>/', views.RestaurantDetailAPIView.as_view(), name='detailres_API'),
+    path('api/1/detailrestaurants/<int:pk>/', views.RestaurantDetailAPIView.as_view(), name='detailres_API'),
+
 ]
 
 

@@ -5,7 +5,10 @@ from .models import Restaurant, Review, Tag
 from .forms import RestaurantForm, EmailForm
 from django.urls import reverse
 
-from django.views.generic import DetailView
+from rest_framework import generics
+from .serializers import RestaurantDetailSerializer, RestaurantListSerializer
+
+from django.views.generic import DetailView, ListView
 
 # Create your views here.
 ## Using (View) because this is not a generic view.
@@ -104,3 +107,13 @@ class EmailFormView(View):
         if form.is_valid():
             form.send_email()
             return HttpResponse("Have a good day")
+
+
+class RestaurantListAPIView(generics.ListAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantListSerializer
+
+class RestaurantDetailAPIView(generics.RetrieveAPIView):
+    #lookup_field = 'id'
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantDetailSerializer
